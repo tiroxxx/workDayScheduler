@@ -5,12 +5,14 @@ body {
 }
 
 textarea{
-  background: transparent;
+  background:transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .jumbotron {
@@ -27,7 +29,8 @@ textarea{
 
 .time-block{
   text-align: center;
-  border-radius: 15px;
+  border-radius: 0px;
+  border-top: dotted;;
 }
 
 .row {
