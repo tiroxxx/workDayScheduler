@@ -2,10 +2,6 @@ var currentDate = $("#currentDay");
 // display current date on the page
 currentDate.text(moment().format("dddd, MMMM Do"));
 
-var tempArr = [];
-
-
-
 //adding the inputs in the locar storage
 $("#btn9").on("click", function () {
     localStorage.setItem("hour-9", $("#9").val())
@@ -49,70 +45,69 @@ init();
 function init() {
     // if theres anything in the locar storage, put in on the page
     var info = localStorage.getItem("hour-9");
-    if(info !== null){
-       $("#9").text(info);
+    if (info !== null) {
+        $("#9").text(info);
     }
 
     info = localStorage.getItem("hour-10");
-    if(info !== null){
-       $("#10").text(info);
+    if (info !== null) {
+        $("#10").text(info);
     }
 
     info = localStorage.getItem("hour-11");
-    if(info !== null){
-       $("#11").text(info);
+    if (info !== null) {
+        $("#11").text(info);
     }
 
     info = localStorage.getItem("hour-12");
-    if(info !== null){
-       $("#12").text(info);
+    if (info !== null) {
+        $("#12").text(info);
     }
 
     info = localStorage.getItem("hour-13");
-    if(info !== null){
-       $("#13").text(info);
+    if (info !== null) {
+        $("#13").text(info);
     }
 
     info = localStorage.getItem("hour-14");
-    if(info !== null){
-       $("#14").text(info);
+    if (info !== null) {
+        $("#14").text(info);
     }
 
     info = localStorage.getItem("hour-15");
-    if(info !== null){
-       $("#15").text(info);
+    if (info !== null) {
+        $("#15").text(info);
     }
 
     info = localStorage.getItem("hour-16");
-    if(info !== null){
-       $("#16").text(info);
+    if (info !== null) {
+        $("#16").text(info);
     }
 
     info = localStorage.getItem("hour-17");
-    if(info !== null){
-       $("#17").text(info);
+    if (info !== null) {
+        $("#17").text(info);
     }
+
     // capture current hour and turn it into integer
     var currentHour = parseInt(moment().format("H"));
-    // loop through 
-    $(".description").each(function() {
+    // loop through each element in the class 'description'
+    $(".description").each(function () {
 
         var timeBlock = parseInt($(this).attr("data-hour"));
-        console.log($(this).attr("data-hour"));
-        if(timeBlock < currentHour) {
+        // if current time is passed the block's, give it class 'past'
+        if (timeBlock < currentHour) {
             $(this).addClass("past");
         }
-
-        else if(timeBlock == currentHour) {
+        // if current time is equals to the block's, give it class 'present'
+        else if (timeBlock == currentHour) {
             $(this).addClass("present");
         }
-
+        // if current time is before the block's, give it 'class' 
         else {
             $(this).addClass("future");
         }
-
     });
-
 }
 
 
